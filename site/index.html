@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0d1117">
-    <meta name="description" content="IYN | 정밀 의료 지식 인프라 및 임상 온톨로지 하모나이제이션 기술 명세서">
-    <meta name="keywords" content="의료지식인프라, SNOMED CT, LOINC, RxNorm, OMOP CDM, FHIR R4, GraphRAG, 임상근거, PICO, 의료AI">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="IYN | Precision Clinical Knowledge Infrastructure & Ontological Harmonization Specification">
+    <meta name="keywords" content="Clinical Knowledge Graph, SNOMED CT, LOINC, RxNorm, OMOP CDM, FHIR R4, GraphRAG, Clinical Evidence, PICO, Medical AI">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="IYN Clinical Architecture">
     <meta property="og:title" content="IYN | Precision Medical Knowledge & Data Intelligence">
-    <meta property="og:description" content="임상 문헌과 다기관 온톨로지를 수학적 지식 그래프와 불변 이력(Provenance)으로 결합하는 고성능 의료 데이터 인프라">
+    <meta property="og:description" content="High-performance medical data infrastructure linking clinical literature and poly-ontologies with mathematical knowledge graphs and immutable provenance.">
     <meta property="og:url" content="https://iyn.one/">
     <meta property="og:image" content="https://iyn.one/og-card.svg">
     <meta name="twitter:card" content="summary_large_image">
@@ -19,11 +19,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=3.1.0">
+    <link rel="stylesheet" href="/styles.css?v=3.2.0">
     <title>IYN | Precision Medical Knowledge &amp; Data Intelligence</title>
   </head>
   <body>
-    <a class="skip-link" href="#main" data-copy="skip_link">본문 바로가기</a>
+    <a class="skip-link" href="#main" data-copy="skip_link">Skip to main content</a>
 
     <!-- Top Metadata Header -->
     <header class="top-nav">
@@ -34,21 +34,17 @@
         </a>
 
         <nav class="nav-links">
-          <a href="#thesis" data-copy="nav_thesis">문제 정의</a>
-          <a href="#harmonization" data-copy="nav_harmonization">온톨로지 정합</a>
-          <a href="#pico" data-copy="nav_pico">임상 근거 그래프</a>
-          <a href="#graphrag" data-copy="nav_graphrag">GraphRAG 아키텍처</a>
-          <a href="#spec" data-copy="nav_spec">기술 규격 &amp; FHIR</a>
-          <a href="#contact" data-copy="nav_contact">문의</a>
+          <a href="#thesis" data-copy="nav_thesis">Thesis</a>
+          <a href="#harmonization" data-copy="nav_harmonization">Harmonization</a>
+          <a href="#pico" data-copy="nav_pico">Evidence Graph</a>
+          <a href="#graphrag" data-copy="nav_graphrag">GraphRAG</a>
+          <a href="#spec" data-copy="nav_spec">FHIR Spec</a>
+          <a href="#contact" data-copy="nav_contact">Inquire</a>
         </nav>
 
         <div class="nav-tools">
-          <button class="tool-btn" id="themeToggle" type="button" aria-label="테마 전환" title="테마 전환">◐</button>
-          <button class="tool-btn mono" id="langToggle" type="button" aria-label="Switch Language">EN</button>
-          <a class="btn-git" href="https://github.com/human30/iyn-site" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span class="mono">GitHub</span>
-          </a>
+          <button class="tool-btn" id="themeToggle" type="button" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">◐</button>
+          <button class="tool-btn mono" id="langToggle" type="button" aria-label="Switch Language">KO</button>
         </div>
       </div>
     </header>
@@ -442,9 +438,9 @@ SELECT ?drugName ?contraindicationType ?evidenceDoi WHERE {
         <div class="footer-col mono">
           <div class="footer-head">SYSTEM INTEGRITY</div>
           <ul class="footer-list">
-            <li>Deployment: c1 Homelab Node</li>
+            <li>Deployment: c1 Edge Node</li>
             <li>Ingress: Cloudflare Zero-Trust Tunnel</li>
-            <li>Repository: <a href="https://github.com/human30/iyn-site" target="_blank">human30/iyn-site</a></li>
+            <li>Security: Merkle Evidence Provenance</li>
             <li>© <span id="year">2026</span> IYN. All Rights Reserved.</li>
           </ul>
         </div>

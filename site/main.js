@@ -134,8 +134,8 @@ const i18n = {
 };
 
 /* State & Controls */
-let currentLang = localStorage.getItem('iyn-lang') || 'ko';
-let currentTheme = localStorage.getItem('iyn-theme') || 'dark';
+let currentLang = localStorage.getItem('iyn-lang') || 'en';
+let currentTheme = localStorage.getItem('iyn-theme') || 'light';
 
 const langToggle = document.getElementById('langToggle');
 const themeToggle = document.getElementById('themeToggle');
@@ -145,7 +145,7 @@ function applyLang(lang) {
   localStorage.setItem('iyn-lang', lang);
   document.documentElement.lang = lang;
   if (langToggle) {
-    langToggle.textContent = lang === 'ko' ? 'EN' : 'KO';
+    langToggle.textContent = lang === 'en' ? 'KO' : 'EN';
   }
 
   const dict = i18n[lang];
@@ -165,13 +165,13 @@ function applyTheme(theme) {
 
 if (langToggle) {
   langToggle.addEventListener('click', () => {
-    applyLang(currentLang === 'ko' ? 'en' : 'ko');
+    applyLang(currentLang === 'en' ? 'ko' : 'en');
   });
 }
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    applyTheme(currentTheme === 'light' ? 'dark' : 'light');
   });
 }
 
