@@ -1,6 +1,6 @@
 /* ==========================================================================
-   IYN | Precision Clinical Informatics Specification (v3.1.0)
-   Philosophy: Ultra-Lightweight, Zero-Bloat, High-Density Technical Typography
+   IYN | Precision Clinical Informatics Specification (v4.0.0)
+   Philosophy: Ultra-Lightweight, High-Density Technical Typography & Graph Semantics
    ========================================================================== */
 
 :root {
@@ -148,7 +148,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 .nav-links a {
   text-decoration: none;
@@ -166,8 +166,8 @@ body {
   gap: 10px;
 }
 .tool-btn {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 4px;
   border: 1px solid var(--ink-border);
   background: var(--bg-surface);
@@ -176,28 +176,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
+  transition: all 0.15s ease;
 }
 .tool-btn:hover {
   border-color: var(--ink-border-strong);
   color: var(--ink-primary);
-}
-.btn-git {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: var(--bg-surface);
-  border: 1px solid var(--ink-border);
-  color: var(--ink-primary);
-}
-.btn-git:hover {
-  border-color: var(--ink-border-strong);
 }
 
 /* ==========================================================================
@@ -326,6 +311,54 @@ body {
   color: var(--ink-primary);
 }
 
+/* Grid Three Feature Cards */
+.grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 10px 0;
+}
+.card-feature {
+  background: var(--bg-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card-meta {
+  font-size: 10.5px;
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+.card-feature h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+.card-feature p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+}
+
+/* Formula List */
+.formula-list {
+  list-style: none;
+  background: var(--bg-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 6px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13.5px;
+}
+.formula-list li strong {
+  color: var(--accent-cyan);
+}
+
 /* Callout Box */
 .callout-box {
   background: var(--bg-surface);
@@ -340,17 +373,7 @@ body {
   font-size: 11.5px;
   font-weight: 700;
   color: var(--accent-cyan);
-  margin-bottom: 12px;
-}
-.callout-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 14.5px;
-}
-.callout-list li strong {
-  color: var(--ink-primary);
+  margin-bottom: 10px;
 }
 
 /* Clinical Cross-Walk Table */
@@ -408,6 +431,11 @@ body {
 .badge-omop { background: rgba(192, 132, 252, 0.12); color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.25); }
 .badge-icd { background: rgba(248, 113, 113, 0.12); color: var(--accent-rose); border: 1px solid rgba(248, 113, 113, 0.25); }
 
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
 .tech-card {
   background: var(--bg-surface);
   border: 1px solid var(--ink-border);
@@ -415,12 +443,12 @@ body {
   padding: 20px 24px;
 }
 .tech-card h4 {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--ink-primary);
   margin-bottom: 8px;
 }
 .tech-card p {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--ink-secondary);
 }
 
@@ -430,6 +458,7 @@ body {
   border: 1px solid var(--ink-border);
   border-radius: 6px;
   padding: 24px;
+  margin-bottom: 24px;
 }
 .cs-header {
   display: flex;
@@ -562,9 +591,9 @@ body {
 .btn-copy {
   background: var(--bg-surface-subtle);
   border: 1px solid var(--ink-border);
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 3px;
-  font-size: 10.5px;
+  font-size: 11px;
   color: var(--accent-cyan);
   cursor: pointer;
 }
@@ -719,6 +748,12 @@ body {
   }
   .metrics-strip {
     grid-template-columns: 1fr 1fr;
+  }
+  .grid-three {
+    grid-template-columns: 1fr;
+  }
+  .grid-two {
+    grid-template-columns: 1fr;
   }
   .pico-table-wrap {
     grid-template-columns: 1fr;
