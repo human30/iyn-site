@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#142d30"/>
+  <path d="M0 490h1200M0 530h1200M890 0v630M930 0v630" stroke="#45605b" stroke-opacity=".38"/>
+  <circle cx="930" cy="315" r="205" fill="none" stroke="#cae66d" stroke-opacity=".24" stroke-dasharray="3 9"/>
+  <circle cx="930" cy="315" r="142" fill="none" stroke="#cae66d" stroke-opacity=".18"/>
+  <path d="M930 315 790 205m140 110 151-116M930 315 791 430m139-115 147 126M930 315V170" stroke="#cae66d" stroke-opacity=".55"/>
+  <circle cx="930" cy="315" r="55" fill="#203c3d" stroke="#cae66d"/>
+  <circle cx="790" cy="205" r="19" fill="#1a3435" stroke="#cae66d"/><circle cx="1081" cy="199" r="19" fill="#1a3435" stroke="#cae66d"/><circle cx="791" cy="430" r="19" fill="#1a3435" stroke="#cae66d"/><circle cx="1077" cy="441" r="19" fill="#1a3435" stroke="#cae66d"/>
+  <text x="78" y="105" fill="#cae66d" font-family="monospace" font-size="17" letter-spacing="4">MEDICAL KNOWLEDGE &amp; DATA INTELLIGENCE</text>
+  <text x="78" y="260" fill="#f5f5f0" font-family="Arial, sans-serif" font-weight="700" font-size="66">의료 지식이 신뢰를 얻는 방식,</text>
+  <text x="78" y="350" fill="#cae66d" font-family="Georgia, serif" font-style="italic" font-size="74">구조로 만듭니다.</text>
+  <text x="80" y="442" fill="#bdc9bd" font-family="Arial, sans-serif" font-size="22">Evidence · Context · Structure · Traceability</text>
+  <text x="80" y="558" fill="#f5f5f0" font-family="Arial, sans-serif" font-weight="700" font-size="34">IYN</text>
+  <text x="930" y="310" text-anchor="middle" fill="#dce6bd" font-family="monospace" font-size="12" letter-spacing="1">CLINICAL</text>
+  <text x="930" y="332" text-anchor="middle" fill="#dce6bd" font-family="monospace" font-size="12" letter-spacing="1">CONCEPT</text>
+</svg>

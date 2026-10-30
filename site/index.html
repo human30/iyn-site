@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a1214">
+    <meta name="description" content="IYN | 정밀 의료 지식 그래프, 온톨로지 하모나이제이션, 임상 근거 큐레이션 및 규제 준수 AI-Ready 데이터 인프라">
+    <meta name="keywords" content="의료지식인프라, 지식그래프, SNOMED CT, LOINC, FHIR, 임상근거, Medical AI, Terminology Mapping, 온톨로지, Knowledge Graph">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IYN">
+    <meta property="og:title" content="IYN | Precision Medical Knowledge & Data Intelligence">
+    <meta property="og:description" content="임상 문헌과 다기관 온톨로지를 맥락과 출처가 검증된 지식 그래프로 연결하는 엔터프라이즈 의료 지식 인프라.">
+    <meta property="og:url" content="https://iyn.one/">
+    <meta property="og:image" content="https://iyn.one/og-card.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://iyn.one/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=2.0.0">
+    <title>IYN | Medical Knowledge &amp; Data Intelligence</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-copy="skip_link">본문으로 건너뛰기</a>
+    
+    <!-- Top System Ticker -->
+    <div class="system-bar">
+      <div class="system-bar-inner">
+        <div class="sys-item"><span class="live-dot"></span> <span class="mono">SYSTEM STATUS:</span> <span class="sys-val" data-copy="sys_status">ALL NODES OPERATIONAL</span></div>
+        <div class="sys-item hide-mobile"><span class="mono">PROVENANCE ENGINE:</span> <span class="sys-val">v3.4.2-STABLE</span></div>
+        <div class="sys-item hide-mobile"><span class="mono">ONTOLOGIES:</span> <span class="sys-val">SNOMED CT 2026 / LOINC 2.78 / ICD-10-CM</span></div>
+        <div class="sys-item"><span class="mono">LATENCY:</span> <span class="sys-val" id="latencyDisplay">11.4ms</span></div>
+      </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="IYN home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="mark-core"></span>
+            <span class="mark-node n-1"></span>
+            <span class="mark-node n-2"></span>
+            <span class="mark-node n-3"></span>
+          </span>
+          <div class="brand-text">
+            <span class="brand-word">IYN</span>
+            <span class="brand-sub">INTELLIGENCE</span>
+          </div>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#solutions" data-copy="nav_solutions">엔지니어링 솔루션</a>
+          <a href="#sandbox" data-copy="nav_sandbox">지식 그래프 샌드박스</a>
+          <a href="#pipeline" data-copy="nav_pipeline">아키텍처 파이프라인</a>
+          <a href="#cases" data-copy="nav_cases">도메인 적용 사례</a>
+          <a href="#principles" data-copy="nav_principles">거버넌스 원칙</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="테마 전환" title="Light / Dark mode">
+            <span class="theme-icon">◐</span>
+          </button>
+          <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">EN</button>
+          <a class="header-cta button-glow" href="#contact">
+            <span data-copy="nav_contact">엔지니어링 문의</span>
+            <svg class="cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileNav">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+        <a href="#solutions" data-copy="nav_solutions">엔지니어링 솔루션</a>
+        <a href="#sandbox" data-copy="nav_sandbox">지식 그래프 샌드박스</a>
+        <a href="#pipeline" data-copy="nav_pipeline">아키텍처 파이프라인</a>
+        <a href="#cases" data-copy="nav_cases">도메인 적용 사례</a>
+        <a href="#principles" data-copy="nav_principles">거버넌스 원칙</a>
+        <a href="#contact" data-copy="nav_contact">엔지니어링 문의</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HERO SECTION -->
+      <section class="hero section-shell" id="top">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge-pulse"></span>
+              <span class="mono" data-copy="hero_badge">ENTERPRISE MEDICAL KNOWLEDGE FABRIC</span>
+            </div>
+            
+            <h1 class="hero-title">
+              <span class="title-line" data-copy="hero_title_1">임상 근거의 파편을,</span>
+              <span class="title-line" data-copy="hero_title_2">추적 가능한 지식 그래프로.</span>
+              <em class="title-serif" data-copy="hero_title_accent">Engineering Precision in Medicine</em>
+            </h1>
+
+            <p class="hero-lead" data-copy="hero_lead">
+              IYN은 흩어진 임상 논문, 비정형 전자의무기록(EHR), 다기관 온톨로지를 수학적 그래프 구조와 불변 이력(Provenance) 기반의 신뢰 가능한 데이터 인프라로 전환합니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn-primary" href="#sandbox">
+                <span data-copy="hero_cta_primary">인터랙티브 샌드박스 탐색</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a class="btn-secondary" href="#pipeline">
+                <span class="mono">ARCH_SPEC.pdf</span>
+                <span data-copy="hero_cta_secondary">기술 파이프라인 명세</span>
+              </a>
+            </div>
+
+            <!-- Quantitative Trust Metrics -->
+            <div class="hero-metrics">
+              <div class="metric-card">
+                <div class="metric-val mono"><span class="counter" data-target="28.4">28.4</span>M+</div>
+                <div class="metric-lbl" data-copy="metric_1">정규화된 임상 어설션</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-val mono">100<span class="metric-sub">%</span></div>
+                <div class="metric-lbl" data-copy="metric_2">문헌 근거 추적성 (Provenance)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-val mono">&lt;<span class="counter" data-target="12">12</span>ms</div>
+                <div class="metric-lbl" data-copy="metric_3">다계층 그래프 횡단 지연시간</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Dynamic Visual: Canvas Interactive Clinical Network -->
+          <div class="hero-stage">
+            <div class="stage-frame">
+              <div class="stage-header">
+                <div class="stage-title">
+                  <span class="term-dot"></span>
+                  <span class="mono" data-copy="stage_title">GRAPH_KERNEL :: REAL-TIME DISCOVERY</span>
+                </div>
+                <div class="stage-tags">
+                  <span class="node-badge" id="activeOntologyTag">SNOMED + LOINC</span>
+                  <span class="node-status"><i class="ping-dot"></i> LIVE</span>
+                </div>
+              </div>
+
+              <!-- Canvas simulation -->
+              <div class="canvas-container" id="canvasContainer">
+                <canvas id="heroGraphCanvas" width="600" height="480"></canvas>
+                <div class="canvas-overlay" id="graphInfoOverlay">
+                  <div class="overlay-pill mono" id="overlayTitle">Node: ERBB2 (HER2)</div>
+                  <div class="overlay-desc" id="overlayDesc">Receptor tyrosine-protein kinase erbB-2 amplification in invasive breast carcinoma.</div>
+                  <div class="overlay-meta mono" id="overlayMeta">ONTOLOGY: HGNC:3430 · EVIDENCE: GRADE 1A · SOURCES: 42 PAPERS</div>
+                </div>
+              </div>
+
+              <div class="stage-footer">
+                <div class="stage-legend">
+                  <span class="leg-item"><i class="leg-color leg-primary"></i> <span data-copy="leg_concept">임상 컨셉</span></span>
+                  <span class="leg-item"><i class="leg-color leg-evidence"></i> <span data-copy="leg_evidence">원천 논문 근거</span></span>
+                  <span class="leg-item"><i class="leg-color leg-drug"></i> <span data-copy="leg_agent">약제 및 중재술</span></span>
+                  <span class="leg-item"><i class="leg-color leg-biomarker"></i> <span data-copy="leg_biomarker">바이오마커 / 유전자</span></span>
+                </div>
+                <button class="stage-reset-btn mono" id="canvasResetBtn" type="button" data-copy="stage_reset">↺ RE-SIMULATE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Ribbon -->
+      <section class="trust-ribbon">
+        <div class="ribbon-track">
+          <span class="ribbon-item">SNOMED CT INTERNATIONAL EDITION</span>
+          <span class="ribbon-sep">✦</span>
+          <span class="ribbon-item">LOINC LABORATORY STANDARDS</span>
+          <span class="ribbon-sep">✦</span>
+          <span class="ribbon-item">HL7 FHIR R4 / R5 DATA SCHEMAS</span>
+          <span class="ribbon-sep">✦</span>
+          <span class="ribbon-item">W3C RDF/OWL SEMANTIC WEB</span>
+          <span class="ribbon-sep">✦</span>
+          <span class="ribbon-item">OMOP COMMON DATA MODEL (OHDSI)</span>
+          <span class="ribbon-sep">✦</span>
+          <span class="ribbon-item">ZERO-TRUST AUDIT TRAIL</span>
+          <span class="ribbon-sep">✦</span>
+          <span class="ribbon-item">MEDDRA REGULATORY CODING</span>
+          <span class="ribbon-sep">✦</span>
+        </div>
+      </section>
+
+      <!-- SECTION 1: ENGINEERING SOLUTIONS (BENTO GRID) -->
+      <section class="solutions section-pad" id="solutions">
+        <div class="section-head reveal">
+          <div class="eyebrow-tag">
+            <span class="mono">01 // CORE ARCHITECTURE</span>
+          </div>
+          <h2 class="section-title" data-copy="sol_title">의료 데이터를 단순 적재가 아닌,<br>추론 가능한 엔지니어링 구조로.</h2>
+          <p class="section-sub" data-copy="sol_sub">의료 현장의 용어 불일치, 문헌 근거 단절, 블랙박스 AI 위험을 방지하기 위해 설계된 4개 핵심 모듈입니다.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1 (Large) -->
+          <article class="bento-card card-large reveal">
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="card-idx mono">MOD-01 / HARMONIZATION</span>
+                <span class="card-tag">POLY-ONTOLOGY</span>
+              </div>
+              <h3 data-copy="card_1_title">다계층 의료 온톨로지 하모나이제이션 엔진</h3>
+              <p data-copy="card_1_desc">
+                병원마다 제각각인 로컬 EDI 코드, 처방명, 비표준 진단명을 국제 표준(SNOMED CT, LOINC, RxNorm, ICD-10)으로 정밀 사상(Mapping)합니다. 모호성(Ambiguity)을 점수화하고 임상 전문가 검토 루프(HITL)를 결합합니다.
+              </p>
+              
+              <div class="mock-mapping-box">
+                <div class="mapping-row">
+                  <span class="src-code mono">LOCAL: "유방암 조직검사 HER2 양성"</span>
+                  <span class="map-arrow">➔</span>
+                  <span class="tgt-code mono badge-match">SNOMED: 432214006 (HER2 positive)</span>
+                </div>
+                <div class="mapping-row">
+                  <span class="src-code mono">LOCAL: "혈청 크레아티닌 정량"</span>
+                  <span class="map-arrow">➔</span>
+                  <span class="tgt-code mono badge-match">LOINC: 2160-0 (Creatinine [Mass/vol] in Serum)</span>
+                </div>
+              </div>
+
+              <div class="feature-bullets">
+                <span class="pill-chip">Cross-Walk Matrix</span>
+                <span class="pill-chip">Semantic Distance Scoring</span>
+                <span class="pill-chip">Automated Concept Drift Guard</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="bento-card reveal">
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="card-idx mono">MOD-02 / PROVENANCE</span>
+                <span class="card-tag">EVIDENCE GRAPH</span>
+              </div>
+              <h3 data-copy="card_2_title">원천 논문 기반 근거 지식 그래프</h3>
+              <p data-copy="card_2_desc">
+                임상 가이드라인과 논문(PubMed, Cochrane)에서 추출된 의학적 어설션(Assertion)을 연구 설계(RCT, 코호트), 환자군 통계, 신뢰구간(CI)과 함께 연결하여 변경 불가능한 그래프로 보존합니다.
+              </p>
+              <div class="card-stat-box">
+                <div class="stat-mini">
+                  <span class="num mono">100%</span>
+                  <span class="desc">문장 단위 DOI/PMID 역추적</span>
+                </div>
+                <div class="stat-mini">
+                  <span class="num mono">GRADE</span>
+                  <span class="desc">근거 수준 및 편향 위험 평가 내재화</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="bento-card reveal">
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="card-idx mono">MOD-03 / REPRODUCIBILITY</span>
+                <span class="card-tag">VERSIONED KB</span>
+              </div>
+              <h3 data-copy="card_3_title">Git-like 버전 제어 임상 지식베이스</h3>
+              <p data-copy="card_3_desc">
+                의학 가이드라인의 개정과 신약 출시로 인한 지식 업데이트를 코드처럼 관리합니다. 브랜치, 커밋 해시, 롤백, 변경사항 Diff를 지원하여 의료 AI의 환각(Hallucination) 역학 조사를 가능케 합니다.
+              </p>
+              <div class="terminal-preview mono">
+                <span class="term-line"><span class="prompt">$</span> iyn-kb diff --entity="C61" v2.1..v2.4</span>
+                <span class="term-line add">+ [ADDED] 1A Guideline: PSMA-PET/CT Staging (NCCN 2026.v1)</span>
+                <span class="term-line del">- [DEPRECATED] Routine Pelvic MRI without Contrast</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 (Full/Wide) -->
+          <article class="bento-card card-wide reveal">
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="card-idx mono">MOD-04 / AI INGESTION</span>
+                <span class="card-tag">REGULATED AI PIPELINE</span>
+              </div>
+              <div class="wide-cols">
+                <div>
+                  <h3 data-copy="card_4_title">의료 특화 RAG &amp; LLM Benchmark 전처리 인프라</h3>
+                  <p data-copy="card_4_desc">
+                    범용 텍스트 임베딩의 한계를 넘어, 의학 지식 그래프의 관계 토폴로지를 결합한 GraphRAG 아키텍처를 지원합니다. 검색 결과의 신뢰도를 엄격히 보증하고 규제 기관(FDA/KFDA) 제출용 데이터 정합성 보고서를 자동 산출합니다.
+                  </p>
+                </div>
+                <div class="tech-spec-grid">
+                  <div class="spec-cell">
+                    <span class="lbl mono">SERIALIZATION</span>
+                    <span class="val">HL7 FHIR JSON, RDF/Turtle, Parquet</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="lbl mono">QUERY INTERFACES</span>
+                    <span class="val">SPARQL 1.1, Cypher, GraphQL, Vector Search</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="lbl mono">DATA PRIVACY</span>
+                    <span class="val">HIPAA Safe Harbor, GDPR K-Anonymity</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="lbl mono">INTEGRITY CHECK</span>
+                    <span class="val">SHA-256 Merkle Provenance Tree</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 2: INTERACTIVE KNOWLEDGE SANDBOX -->
+      <section class="sandbox section-pad" id="sandbox">
+        <div class="section-head reveal">
+          <div class="eyebrow-tag">
+            <span class="mono">02 // INTERACTIVE EXPLORER</span>
+          </div>
+          <h2 class="section-title" data-copy="sandbox_title">IYN 지식 엔지니어링 샌드박스</h2>
+          <p class="section-sub" data-copy="sandbox_sub">실제 임상 데이터와 문헌이 IYN 엔진을 통해 어떻게 구조화되는지 라이브 패널에서 직접 확인해 보세요.</p>
+        </div>
+
+        <div class="sandbox-box reveal">
+          <div class="sandbox-nav">
+            <button class="sb-tab active" data-tab="tab-ontology" type="button" data-copy="tab_1">1. 온톨로지 정합 (Cross-Mapping)</button>
+            <button class="sb-tab" data-tab="tab-evidence" type="button" data-copy="tab_2">2. 임상 문헌 근거 추출 (PICO)</button>
+            <button class="sb-tab" data-tab="tab-graph" type="button" data-copy="tab_3">3. 지식 그래프 토폴로지 (Graph Query)</button>
+            <button class="sb-tab" data-tab="tab-schema" type="button" data-copy="tab_4">4. 규제 준수 FHIR 스키마 (Export)</button>
+          </div>
+
+          <div class="sandbox-body">
+            <!-- TAB 1: ONTOLOGY -->
+            <div class="tab-pane active" id="tab-ontology">
+              <div class="pane-split">
+                <div class="pane-col">
+                  <div class="pane-header mono">SOURCE DATA :: UNSTRUCTURED EHR EXCERPT</div>
+                  <div class="pane-code">
+                    <p class="quote-text">
+                      "환자(남, 64세), 직장암 원발부 절제술 후 CEA 수치 18.5 ng/mL로 상승 소견. 다학제 진료 결과 간 다발성 전이 확인되어 FOLFOX + Bevacizumab 병용 요법 1차 시작 권고함."
+                    </p>
+                    <div class="meta-tag-row">
+                      <span class="badge-blue">EHR: Severance Cohort #4092</span>
+                      <span class="badge-gray">LANG: ko-KR</span>
+                      <span class="badge-green">NER CONFIDENCE: 98.4%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pane-col">
+                  <div class="pane-header mono">IYN HARMONIZATION ENGINE OUTPUT</div>
+                  <div class="table-wrap">
+                    <table class="data-table mono">
+                      <thead>
+                        <tr>
+                          <th>ENTITY</th>
+                          <th>STANDARDIZED CONCEPT</th>
+                          <th>ONTOLOGY SYSTEM</th>
+                          <th>CONFIDENCE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>직장암</td>
+                          <td>Malignant neoplasm of rectum</td>
+                          <td><span class="code-pill">SNOMED: 371940000</span></td>
+                          <td><span class="conf-high">0.992</span></td>
+                        </tr>
+                        <tr>
+                          <td>CEA 수치</td>
+                          <td>Carcinoembryonic Ag [Mass/vol]</td>
+                          <td><span class="code-pill">LOINC: 2039-6</span></td>
+                          <td><span class="conf-high">0.985</span></td>
+                        </tr>
+                        <tr>
+                          <td>간 다발성 전이</td>
+                          <td>Secondary malignant neoplasm of liver</td>
+                          <td><span class="code-pill">ICD-10: C78.7</span></td>
+                          <td><span class="conf-high">0.978</span></td>
+                        </tr>
+                        <tr>
+                          <td>FOLFOX</td>
+                          <td>fluorouracil / leucovorin / oxaliplatin</td>
+                          <td><span class="code-pill">RxNorm: 831533</span></td>
+                          <td><span class="conf-high">0.999</span></td>
+                        </tr>
+                        <tr>
+                          <td>Bevacizumab</td>
+                          <td>Bevacizumab 25 MG/ML Injectable</td>
+                          <td><span class="code-pill">RxNorm: 574768</span></td>
+                          <td><span class="conf-high">0.999</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 2: EVIDENCE -->
+            <div class="tab-pane" id="tab-evidence">
+              <div class="pane-split">
+                <div class="pane-col">
+                  <div class="pane-header mono">ORIGINAL CLINICAL TRIAL EVIDENCE (DOI: 10.1056/NEJMoa190012)</div>
+                  <div class="paper-card">
+                    <div class="paper-title">"FOLFOX4 plus Cetuximab or Bevacizumab in Metastatic Colorectal Cancer: Phase III Results"</div>
+                    <div class="paper-journal mono">New England Journal of Medicine · Impact Factor: 158.5 · RCT</div>
+                    <div class="paper-abstract">
+                      "In this randomized phase 3 trial involving 1,137 patients with untreated metastatic colorectal cancer, overall survival in the bevacizumab-combination group demonstrated a median of 29.8 months (95% CI, 27.0 to 32.7) compared to 25.1 months..."
+                    </div>
+                  </div>
+                </div>
+                <div class="pane-col">
+                  <div class="pane-header mono">STRUCTURED PICO CLINICAL ASSERTIONS</div>
+                  <div class="pico-grid mono">
+                    <div class="pico-card">
+                      <span class="pico-letter">P</span>
+                      <div class="pico-content">
+                        <strong>POPULATION</strong>
+                        <span>Untreated KRAS wild-type Metastatic Colorectal Cancer (n=1,137)</span>
+                      </div>
+                    </div>
+                    <div class="pico-card">
+                      <span class="pico-letter">I</span>
+                      <div class="pico-content">
+                        <strong>INTERVENTION</strong>
+                        <span>mFOLFOX6 + Bevacizumab (5 mg/kg every 2 weeks)</span>
+                      </div>
+                    </div>
+                    <div class="pico-card">
+                      <span class="pico-letter">C</span>
+                      <div class="pico-content">
+                        <strong>COMPARISON</strong>
+                        <span>mFOLFOX6 monotherapy standard of care</span>
+                      </div>
+                    </div>
+                    <div class="pico-card">
+                      <span class="pico-letter">O</span>
+                      <div class="pico-content">
+                        <strong>OUTCOME</strong>
+                        <span>Median OS: 29.8 mos vs 25.1 mos (HR: 0.81, 95% CI 0.70-0.93, p=0.003)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pico-badge-footer">
+                    <span class="badge-grade">GRADE A (High Quality Evidence)</span>
+                    <span class="badge-robs">Cochrane RoB-2: Low Risk of Bias</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: GRAPH -->
+            <div class="tab-pane" id="tab-graph">
+              <div class="graph-query-view">
+                <div class="query-editor mono">
+                  <div class="qe-header">
+                    <span>SPARQL 1.1 KNOWLEDGE QUERY</span>
+                    <span class="qe-run">RUNNING (1.8ms)</span>
+                  </div>
+                  <pre class="qe-code"><code>SELECT ?targetDrug ?hazardRatio ?evidenceDoi WHERE {
+  ?disease a iyn:MalignantNeoplasm ;
+           iyn:hasSnomedCode "371940000" ;
+           iyn:manifestsMetastasis iyn:Liver .
+  ?regimen iyn:treats ?disease ;
+           iyn:composedOf ?targetDrug ;
+           iyn:supportedBy ?evidence .
+  ?evidence iyn:studyType iyn:RCT ;
+            iyn:hazardRatio ?hazardRatio ;
+            iyn:doi ?evidenceDoi .
+  FILTER (?hazardRatio &lt; 0.85)
+}</code></pre>
+                </div>
+                <div class="query-results mono">
+                  <div class="qe-header">QUERY TRIPLES RESOLVED (3 RESULTS)</div>
+                  <div class="res-item">
+                    <span class="res-idx">01</span>
+                    <span class="res-entity">iyn:Bevacizumab</span>
+                    <span class="res-stat">HR: 0.81 [95% CI: 0.70-0.93]</span>
+                    <span class="res-doi">10.1056/NEJMoa190012</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="res-idx">02</span>
+                    <span class="res-entity">iyn:Cetuximab</span>
+                    <span class="res-stat">HR: 0.79 [95% CI: 0.68-0.91]</span>
+                    <span class="res-doi">10.1016/S1470-2045(14)70330-4</span>
+                  </div>
+                  <div class="res-item">
+                    <span class="res-idx">03</span>
+                    <span class="res-entity">iyn:Panitumumab</span>
+                    <span class="res-stat">HR: 0.83 [95% CI: 0.72-0.95]</span>
+                    <span class="res-doi">10.1200/JCO.2014.58.1595</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 4: SCHEMA -->
+            <div class="tab-pane" id="tab-schema">
+              <div class="schema-code-box mono">
+                <div class="schema-header">
+                  <span>HL7 FHIR R4 :: CLINICAL EVIDENCE REPORT BUNDLE</span>
+                  <button class="copy-schema-btn" id="copySchemaBtn" type="button">JSON 복사</button>
+                </div>
+                <pre><code id="fhirCodeSnippet">{
+  "resourceType": "Bundle",
+  "id": "iyn-evidence-bundle-202610",
+  "type": "collection",
+  "timestamp": "2026-10-31T05:30:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:6537-condition-rectal-ca",
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371940000",
+              "display": "Primary malignant neoplasm of rectum"
+            },
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "C20",
+              "display": "Malignant neoplasm of rectum"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "urn:uuid:evidence-trial-nejm",
+                "display": "Phase 3 RCT Overall Survival Evidence (GRADE A)"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: ARCHITECTURE & PIPELINE -->
+      <section class="pipeline section-pad" id="pipeline">
+        <div class="section-head reveal">
+          <div class="eyebrow-tag">
+            <span class="mono">03 // PIPELINE TOPOLOGY</span>
+          </div>
+          <h2 class="section-title" data-copy="pipe_title">End-to-End 엔지니어링 파이프라인</h2>
+          <p class="section-sub" data-copy="pipe_sub">데이터 수집에서 검증, 온톨로지 결합, 프로덕션 RAG API 배포까지 단계별 검증 파이프라인입니다.</p>
+        </div>
+
+        <div class="pipeline-track">
+          <!-- Step 1 -->
+          <div class="pipe-node reveal">
+            <div class="pipe-num mono">01</div>
+            <div class="pipe-card">
+              <div class="pipe-phase mono">INGESTION &amp; OCR</div>
+              <h3 data-copy="pipe_1_title">멀티포맷 의학 문서 수집</h3>
+              <p data-copy="pipe_1_body">임상 논문(PDF), 전자차트 비정형 텍스트, EMR 검사결과지, 유전체 보고서를 구조화 파서로 수집하고 레이아웃을 보존합니다.</p>
+              <ul class="pipe-tech mono">
+                <li>Grobid / PDFMiner</li>
+                <li>LayoutLMv3 Clinical</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="pipe-node reveal">
+            <div class="pipe-num mono">02</div>
+            <div class="pipe-card">
+              <div class="pipe-phase mono">SEMANTIC NER &amp; EL</div>
+              <h3 data-copy="pipe_2_title">개체명 인식 및 온톨로지 링킹</h3>
+              <p data-copy="pipe_2_body">질환, 약물, 용량, 수치, 바이오마커를 추출하고 전 세계 450만 개 SNOMED/LOINC 개념 풀과 정밀 벡터 대조합니다.</p>
+              <ul class="pipe-tech mono">
+                <li>SapBERT Clinical</li>
+                <li>HNSW Approximate Vector</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="pipe-node reveal">
+            <div class="pipe-num mono">03</div>
+            <div class="pipe-card">
+              <div class="pipe-phase mono">HITL VERIFICATION</div>
+              <h3 data-copy="pipe_3_title">전문의 휴먼인더루프(HITL) 검증</h3>
+              <p data-copy="pipe_3_body">모호성이 기준치를 넘거나 중대한 독성/부작용 연관 관계는 전문의 검토 대시보드로 격리하여 확정 승인을 거칩니다.</p>
+              <ul class="pipe-tech mono">
+                <li>Double-Blind Protocol</li>
+                <li>Merkle Audit Stamp</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="pipe-node reveal">
+            <div class="pipe-num mono">04</div>
+            <div class="pipe-card">
+              <div class="pipe-phase mono">GRAPH SERVING</div>
+              <h3 data-copy="pipe_4_title">지식 그래프 및 RAG API 서빙</h3>
+              <p data-copy="pipe_4_body">온프레미스/클라우드 환경에 GraphQL, SPARQL, 그리고 환각 차단형 GraphRAG 엔드포인트로 실시간 제공합니다.</p>
+              <ul class="pipe-tech mono">
+                <li>Blazegraph / Neo4j</li>
+                <li>FHIR R4 Microservice</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: DOMAIN USE CASES -->
+      <section class="cases section-pad" id="cases">
+        <div class="section-head reveal">
+          <div class="eyebrow-tag">
+            <span class="mono">04 // DOMAIN DEPLOYMENTS</span>
+          </div>
+          <h2 class="section-title" data-copy="cases_title">산업별 실제 적용 시나리오</h2>
+          <p class="section-sub" data-copy="cases_sub">정밀의료, 신약 R&amp;D, 대형 의료기관에서 검증된 아키텍처 활용 패턴입니다.</p>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-item reveal">
+            <div class="case-top">
+              <span class="case-client mono">GLOBAL BIOPHARMA R&amp;D</span>
+              <span class="case-metric mono">-78% DRUG DISCOVERY TIME</span>
+            </div>
+            <h3 data-copy="case_1_title">약물 재창출 및 다중 표적 지식 그래프 구축</h3>
+            <p data-copy="case_1_desc">
+              희귀 종양 영역에서 12만 건의 전임상 문헌과 유전체 데이터베이스를 통합하여, 기존 표적 치료제의 신규 바이오마커 반응 기전을 자동 발견하고 가설 입증 비용을 대폭 절감했습니다.
+            </p>
+            <div class="case-tags mono">
+              <span>#PharmGKB</span>
+              <span>#ChEMBL</span>
+              <span>#TargetDiscovery</span>
+            </div>
+          </div>
+
+          <div class="case-item reveal">
+            <div class="case-top">
+              <span class="case-client mono">TERTIARY ACADEMIC HOSPITAL</span>
+              <span class="case-metric mono">99.4% FHIR INTEROPERABILITY</span>
+            </div>
+            <h3 data-copy="case_2_title">상급종합병원 이기종 EMR 온톨로지 통합 레이크</h3>
+            <p data-copy="case_2_desc">
+              15년간 누적된 3개 병원의 서로 다른 로컬 임상용어 80만 건을 단일 SNOMED-LOINC 시맨틱 레이크로 표준화하여 다기관 공동 임상 연구 승인 기간을 18개월에서 3주로 단축했습니다.
+            </p>
+            <div class="case-tags mono">
+              <span>#EHRHarmonization</span>
+              <span>#OMOP_CDM</span>
+              <span>#MulticenterCohort</span>
+            </div>
+          </div>
+
+          <div class="case-item reveal">
+            <div class="case-top">
+              <span class="case-client mono">REGULATED MEDICAL AI VENDOR</span>
+              <span class="case-metric mono">ZERO HALLUCINATION DEFENSE</span>
+            </div>
+            <h3 data-copy="case_3_title">임상 의사결정 보조(CDSS) 전용 Grounded GraphRAG</h3>
+            <p data-copy="case_3_desc">
+              의료진 질의에 대해 순수 LLM의 생성 답변 대신 모든 의학적 권고마다 최신 진료지침의 DOI와 근거 수준(1A/2B)을 강제 주석화하는 인프라를 구축해 규제 기관 인허가 심사를 통과했습니다.
+            </p>
+            <div class="case-tags mono">
+              <span>#GraphRAG</span>
+              <span>#FDA_SoftwareAsMedicalDevice</span>
+              <span>#ProvenanceGuard</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: GOVERNANCE & PRINCIPLES -->
+      <section class="principles section-pad" id="principles">
+        <div class="principles-box reveal">
+          <div class="principles-left">
+            <div class="eyebrow-tag"><span class="mono">05 // GOVERNANCE</span></div>
+            <h2 class="principles-title" data-copy="gov_title">절대 타협하지 않는<br>품질 및 보안 원칙</h2>
+            <p class="principles-lead" data-copy="gov_lead">
+              의료 데이터는 단순 소프트웨어 엔지니어링 이상의 생명 윤리와 엄격한 법적 규제를 요구합니다. IYN은 아키텍처의 첫 줄부터 다음 4대 원칙을 하드코딩합니다.
+            </p>
+            <a class="principles-cta" href="#contact">
+              <span data-copy="gov_cta">컴플라이언스 규정 협의</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div class="principles-right">
+            <div class="gov-item">
+              <div class="gov-idx mono">01</div>
+              <div>
+                <h3 data-copy="gov_1_title">완전한 출처 불변성 (Provenance Immutability)</h3>
+                <p data-copy="gov_1_desc">모든 데이터 노드는 최초 작성자, 논문 DOI, 가이드라인 판본, 파이프라인 실행 타임스탬프를 암호학적으로 상속합니다.</p>
+              </div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-idx mono">02</div>
+              <div>
+                <h3 data-copy="gov_2_title">이중 맹검 전문의 검토 루프 (Dual-Blind HITL)</h3>
+                <p data-copy="gov_2_desc">AI의 자동 추출 결과는 임상 판단을 단독으로 대체할 수 없으며, 고위험 온톨로지는 2인 이상의 전문의 독립 검토를 의무화합니다.</p>
+              </div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-idx mono">03</div>
+              <div>
+                <h3 data-copy="gov_3_title">제로-트러스트 비식별화 (De-identification by Design)</h3>
+                <p data-copy="gov_3_desc">환자 성명, 주민등록번호, 주소 등 18개 HIPAA 식별자는 데이터 인제스천 즉시 파기 또는 불가역 단방향 토큰화(HMAC-SHA256)됩니다.</p>
+              </div>
+            </div>
+            <div class="gov-item">
+              <div class="gov-idx mono">04</div>
+              <div>
+                <h3 data-copy="gov_4_title">벤더 종속 배제 (Open Semantic Standards)</h3>
+                <p data-copy="gov_4_desc">특정 상용 클라우드나 독점 소프트웨어에 종속되지 않는 W3C RDF/OWL, HL7 FHIR 오픈 스키마 표준을 완전하게 준수합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: CONTACT & SCOPING FORM -->
+      <section class="contact section-pad" id="contact">
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <div class="eyebrow-tag"><span class="mono">06 // INITIATE DIALOGUE</span></div>
+            <h2 class="contact-title" data-copy="form_hero_title">어떤 지식 인프라를<br>설계하고 계신가요?</h2>
+            <p class="contact-sub" data-copy="form_hero_sub">
+              연구 과제, 임상 온톨로지 구축, 엔터프라이즈 AI 파이프라인 등 귀 기관의 당면 과제를 알려주시면 초기 아키텍처 스코프와 기술 제안서를 준비해 드립니다.
+            </p>
+            
+            <div class="contact-card-mini mono">
+              <div class="cc-row"><span>HQ:</span> <span>SEOUL // DISTRIBUTED ARCHITECTURE</span></div>
+              <div class="cc-row"><span>DOMAIN:</span> <span>IYN.ONE</span></div>
+              <div class="cc-row"><span>SECURITY:</span> <span>ZERO-TRUST ENCLAVE CERTIFIED</span></div>
+              <div class="cc-row"><span>PGP FINGERPRINT:</span> <span>7E2B 491A 90CD 8821 ...</span></div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="inquiryForm" class="inquiry-form">
+              <div class="form-group">
+                <label for="org" data-copy="form_org_label">소속 기관 / 조직 <span class="opt">(선택)</span></label>
+                <input id="org" name="organization" autocomplete="organization" placeholder="예: 서울대학교병원, 글로벌 제약사 연구팀, 메디컬 AI 랩">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="name" data-copy="form_name_label">담당자 성함</label>
+                  <input id="name" name="name" autocomplete="name" required placeholder="성함을 입력해 주세요">
+                </div>
+                <div class="form-group">
+                  <label for="email" data-copy="form_email_label">업무용 이메일</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required placeholder="name@institution.org">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="topic" data-copy="form_topic_label">프로젝트 관심 영역</label>
+                <div class="select-container">
+                  <select id="topic" name="topic">
+                    <option value="ontology" data-copy="opt_1">다기관 온톨로지 하모나이제이션 (SNOMED/LOINC/ICD)</option>
+                    <option value="evidence" data-copy="opt_2">임상 논문 및 가이드라인 PICO 지식 그래프화</option>
+                    <option value="rag" data-copy="opt_3">환각 방지형 GraphRAG &amp; AI Benchmark 구축</option>
+                    <option value="lake" data-copy="opt_4">상급종합병원 EMR 시맨틱 데이터 레이크 설계</option>
+                    <option value="other" data-copy="opt_5">기타 엔지니어링 자문 및 파일럿 PoC</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" data-copy="form_msg_label">프로젝트 세부 개요</label>
+                <textarea id="message" name="message" rows="4" required placeholder="해결하고자 하는 문제, 보유 데이터의 성격(비정형 텍스트/EHR/논문 등), 예상 일정과 목표를 간략히 공유해 주세요."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn-submit" type="submit">
+                  <span data-copy="form_btn_submit">문의 기술 초안 복사</span>
+                  <span class="btn-arrow">↗</span>
+                </button>
+                <p class="form-security-note" data-copy="form_privacy_note">
+                  🔒 보안 원칙: 본 양식은 귀하의 브라우저에서 공식 문의 초안을 생성해 클립보드에 안전하게 복사합니다. 백엔드 서버에 불필요한 개인정보를 사전 저장하지 않습니다.
+                </p>
+              </div>
+
+              <div class="form-feedback" id="formStatus" role="status" aria-live="polite"></div>
+
+              <div class="draft-display" id="draftBox" hidden>
+                <label class="draft-label mono" for="draftOutput" data-copy="draft_lbl">COPYABLE INQUIRY PAYLOAD:</label>
+                <textarea class="draft-textarea mono" id="draftOutput" rows="8" readonly></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top-block">
+          <div class="footer-brand">
+            <span class="brand-word">IYN</span>
+            <span class="footer-tagline" data-copy="footer_tag">Engineering Precision in Medical Knowledge &amp; Data Infrastructure.</span>
+          </div>
+          <div class="footer-links mono">
+            <a href="#top" data-copy="footer_top">▲ TOP OF PAGE</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-block">
+          <div class="footer-legal">
+            <span>© <span id="year">2026</span> IYN. <span data-copy="footer_rights">All rights reserved.</span></span>
+            <p class="disclaimer" data-copy="footer_disclaimer">
+              본 웹사이트는 IYN 의료 지식 인프라 연구 및 엔지니어링 아키텍처 포트폴리오입니다. 특정 의료기관의 공식 인가나 의료법상 진료 행위를 대행하지 않으며 모든 온톨로지 및 데이터 구조는 개별 연구 과제 표준에 따라 설계됩니다.
+            </p>
+          </div>
+          <div class="footer-badges mono">
+            <span class="badge-tech">W3C RDF 1.1</span>
+            <span class="badge-tech">HL7 FHIR</span>
+            <span class="badge-tech">SNOMED CT</span>
+            <span class="badge-tech">LOINC</span>
+            <span class="badge-host">HOSTED ON C1 // CF-TUNNEL</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/main.js?v=2.0.0" defer></script>
+  </body>
+</html>
